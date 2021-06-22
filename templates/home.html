@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container" align="center">
+        <div class="jumbotron">
+                {% for i in todo_list %}
+            <div class="row">
+                <div class="col-md-5">
+                        <h3><b>{{i.task}}</b></h3>
+                </div>
+
+                <div class="col-md-5">
+                    <h3><b>{{i.dateandtime}}</b></h3>
+                </div>
+
+                <div class="col-md-1">
+                    <a href="" class="btn btn-success">UPDATE</a>
+                </div>
+
+                <div class="col-md-1">
+                    <a href="" class="btn btn-danger">DELETE</a>
+                </div>
+            </div>
+            {% endfor %}    
+    
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    Enter the Task:<input type="text" name="content">
+                    <input type="submit">
+                </form>
+            </div>
+        </div>
+        
+    </div>
+    
+
+</body>
+</html>
